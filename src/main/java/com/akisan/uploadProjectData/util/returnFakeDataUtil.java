@@ -16,16 +16,16 @@ public class returnFakeDataUtil {
         return className[a];
     }
 
-    //获得随机班级2020
-    public static String getClassName2In2020(){
-        String[] className = {"软工2001","软工2002","软工2003","软工2004","计科2001","计科2002","计科2003","计科2004","大数据2001","大数据2002","大数据2003","大数据2004"};
+    //获得随机班级
+    public static String getClassName(){
+        String[] className = {"软工2001","软工2002","软工2003","软工2004","计科2001","计科2002","计科2003","计科2004","大数据2001","大数据2002","大数据2003","大数据2004","大数据1901","大数据1902","大数据1903","大数据1904","软工1901","软工1902","软工1903","软工1904","计科1901","计科1902","计科1903","计科1904"};
         int a = (int) Math.abs(className.length * Math.random());
         return className[a];
     }
 
     //获得入学时间
-    public static String getInSchoolTime(){
-        String[] className = {"2019","2020"};
+    public static String getInSchool(){
+        String[] className = {"0","1"};
         int a = (int) Math.abs(className.length * Math.random());
         return className[a];
     }

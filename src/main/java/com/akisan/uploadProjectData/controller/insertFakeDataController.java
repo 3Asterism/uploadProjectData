@@ -17,9 +17,9 @@ public class insertFakeDataController {
     @Autowired
     insertStd_InfoFakeDataImpl insertStd_InfoFakeDataImpl;
 
-    @PostMapping("/updateBlogComment")
-    @ApiOperation(value = "修改博客评论")
-    public resultForRequestConstant updateComment() {
+    @PostMapping("/insertFakeData")
+    @ApiOperation(value = "插入50条假数据")
+    public resultForRequestConstant insertFakeData() {
         insertStd_InfoFakeDataImpl.insertFakeData();
         return resultForRequestConstant.success();
     }
