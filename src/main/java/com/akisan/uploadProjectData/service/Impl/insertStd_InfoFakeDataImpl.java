@@ -1,13 +1,16 @@
 package com.akisan.uploadProjectData.service.Impl;
 
 import com.akisan.uploadProjectData.entity.std_info;
+import com.akisan.uploadProjectData.entity.std_exam;
 import com.akisan.uploadProjectData.service.insertStd_InfoFakeData;
 import com.akisan.uploadProjectData.mapper.std_infoMapper;
+import com.akisan.uploadProjectData.mapper.std_examMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static com.akisan.uploadProjectData.util.returnFakeDataUtil.*;
 
@@ -15,10 +18,13 @@ import static com.akisan.uploadProjectData.util.returnFakeDataUtil.*;
 public class insertStd_InfoFakeDataImpl implements insertStd_InfoFakeData {
     @Autowired
     private std_infoMapper std_infoMapper;
+    @Autowired
+    private std_examMapper std_examMapper;
 
     @Override
     public void insertFakeData() {
         List<std_info> fakeName = new ArrayList<>();
+        List<std_exam> fakeExam = new ArrayList<>();
 
         //生成50条std_info信息
         for(int i=0;i<50;i++){
@@ -33,6 +39,27 @@ public class insertStd_InfoFakeDataImpl implements insertStd_InfoFakeData {
 
             fakeName.add(std_info1);
         }
+
         std_infoMapper.insertFakeData(fakeName);
+
+        //生成50条std_exam信息 id与name取自std_info
+        for(int i=0;i<50;i++){
+            std_exam std_exam1 = new std_exam();
+            fakeName.get(i).setId(std_infoMapper.getStdId(fakeName.get(i).getName()).get(0).getId());
+            std_exam1.setStdid(fakeName.get(i).getId());
+            std_exam1.setName(fakeName.get(i).getName());
+            for(int l=0;l<3;l++){
+                std_exam std_exam2 = new std_exam();
+                std_exam2.setStdid(std_exam1.getStdid());
+                std_exam2.setName(std_exam1.getName());
+                std_exam2.setExamclass(getClassName1());
+                std_exam2.setScore(getScore1());
+
+                fakeExam.add(std_exam2);
+            }
+        }
+
+        std_examMapper.insertFakeData(fakeExam);
+
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.akisan.uploadProjectData.mapper.std_examMapper">
+    <resultMap id="BaseResultMap" type="com.akisan.uploadProjectData.entity.std_exam">
+        <id column="id" property="id"/>
+        <result column="stdid" property="stdid"/>
+        <result column="name" property="name"/>
+        <result column="examclass" property="examclass"/>
+        <result column="score" property="score"/>
+    </resultMap>
+
+    <insert id="insertFakeData">
+        INSERT INTO std_exam(stdid, name, examclass, score)
+        VALUES
+        <foreach collection="std_exam" item="std_exam" separator=",">
+            (#{std_exam.stdid,jdbcType=INTEGER}, #{std_exam.name, jdbcType=VARCHAR}, #{std_exam.examclass, jdbcType=VARCHAR}, #{std_exam.score, jdbcType=INTEGER})
+        </foreach>
+    </insert>
+
+</mapper>

@@ -1,14 +1,27 @@
 package com.akisan.uploadProjectData.util;
 
+import java.util.Random;
+
 public class returnFakeDataUtil {
 
     //获得随机课程
     public static String getClassName1(){
-        String[] className = {"高等数学","计算机理论","线性代数","离散数学","计算机网络","计算机组成原理","linux","Java","python","hadoop","spark","数据库与数据库实践","大学物理","概率论"};
+        String[] className = {"高等数学","计算机理论","线性代数","离散数学","计算机网络","计算机组成原理","linux","Java","python","hadoop","spark","数据库与数据库实践","大学物理","概率论","c语言","神经网络","人工智能","网络编程","大学物理","计算机概论","高等数学2","网络编程","flink","大学物理2"};
         int a = (int) Math.abs(className.length * Math.random());
         return className[a];
     }
 
+    public static String getClassName2(){
+        String[] className = {"高等数学","计算机理论","线性代数","离散数学","计算机网络","计算机组成原理","linux","Java","python","hadoop","spark","数据库与数据库实践","大学物理","概率论","c语言","神经网络","人工智能","网络编程","大学物理","计算机概论","高等数学2","网络编程","flink","大学物理2"};
+        int a = (int) Math.abs(className.length * Math.random());
+        return className[a];
+    }
+
+    public static String getClassName3(){
+        String[] className = {"高等数学","计算机理论","线性代数","离散数学","计算机网络","计算机组成原理","linux","Java","python","hadoop","spark","数据库与数据库实践","大学物理","概率论","c语言","神经网络","人工智能","网络编程","大学物理","计算机概论","高等数学2","网络编程","flink","大学物理2"};
+        int a = (int) Math.abs(className.length * Math.random());
+        return className[a];
+    }
     //获得随机班级2019
     public static String getClassName2In2019(){
         String[] className = {"大数据1901","大数据1902","大数据1903","大数据1904","软工1901","软工1902","软工1903","软工1904","计科1901","计科1902","计科1903","计科1904"};
@@ -28,6 +41,24 @@ public class returnFakeDataUtil {
         String[] className = {"0","1"};
         int a = (int) Math.abs(className.length * Math.random());
         return className[a];
+    }
+
+    public static int getScore1(){
+        Random ran=new Random();
+        int ranNum=ran.nextInt(55) + 40;//[40,95)
+        return ranNum;
+    }
+
+    public static int getScore2(){
+        Random ran=new Random();
+        int ranNum=ran.nextInt(55) + 40;//[40,95)
+        return ranNum;
+    }
+
+    public static int getScore3(){
+        Random ran=new Random();
+        int ranNum=ran.nextInt(55) + 40;//[40,95)
+        return ranNum;
     }
 
     //获得随机姓名

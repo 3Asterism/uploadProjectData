@@ -9,4 +9,6 @@ import java.util.List;
 @Mapper
 public interface std_infoMapper {
     void insertFakeData(@Param("std_info") List<std_info> std_info);
+
+    List<std_info> getStdId(@Param("name") String name);
 }

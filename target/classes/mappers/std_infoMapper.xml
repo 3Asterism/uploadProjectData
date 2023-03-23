@@ -17,4 +17,12 @@
             (#{std_info.name,jdbcType=VARCHAR}, #{std_info.classname, jdbcType=VARCHAR}, #{std_info.inschool, jdbcType=VARCHAR})
         </foreach>
     </insert>
+
+    <select id="getStdId" resultMap="BaseResultMap">
+        SELECT id FROM std_info
+        WHERE 1=1
+        <if test="name != null">
+            AND name = #{name}
+        </if>
+    </select>
 </mapper>
