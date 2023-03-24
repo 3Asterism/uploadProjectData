@@ -44,7 +44,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("akiBlog")
-                .description("个人博客项目文档")
+                .description("项目假数据生成器")
                 .termsOfServiceUrl("http://47.100.215.126/:8090/")
                 .contact("后端:842384412@qq.com Aki\n" +
                         "前端:976875730@qq.com 蓝酱")
