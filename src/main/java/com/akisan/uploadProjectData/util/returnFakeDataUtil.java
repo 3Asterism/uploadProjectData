@@ -29,6 +29,14 @@ public class returnFakeDataUtil {
         return className[a];
     }
 
+    //获得随机班级2019
+    public static String getActvName(){
+        String[] className = {"青年下乡","课业实习","课外实习","大扫除","linux答辩","Java答辩","hadoop答辩","spark答辩","文艺表演","军训","python答辩","军事实习","入学体检","心理健康测试","就业训练","就业招聘会"};
+        int a = (int) Math.abs(className.length * Math.random());
+        return className[a];
+    }
+
+
     //获得随机班级
     public static String getClassName(){
         String[] className = {"软工2001","软工2002","软工2003","软工2004","计科2001","计科2002","计科2003","计科2004","大数据2001","大数据2002","大数据2003","大数据2004","大数据1901","大数据1902","大数据1903","大数据1904","软工1901","软工1902","软工1903","软工1904","计科1901","计科1902","计科1903","计科1904"};
@@ -49,15 +57,9 @@ public class returnFakeDataUtil {
         return ranNum;
     }
 
-    public static int getScore2(){
+    public static int getAttempt(){
         Random ran=new Random();
-        int ranNum=ran.nextInt(55) + 40;//[40,95)
-        return ranNum;
-    }
-
-    public static int getScore3(){
-        Random ran=new Random();
-        int ranNum=ran.nextInt(55) + 40;//[40,95)
+        int ranNum=ran.nextInt(4) + 1;//[1,5)
         return ranNum;
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.akisan.uploadProjectData.mapper.std_actvMapper">
+    <resultMap id="BaseResultMap" type="com.akisan.uploadProjectData.entity.std_actv">
+        <id column="id" property="id"/>
+        <result column="stdid" property="stdid"/>
+        <result column="name" property="name"/>
+        <result column="actvname" property="actvname"/>
+        <result column="attempt" property="attempt"/>
+    </resultMap>
+
+    <insert id="insertFakeData">
+        INSERT INTO std_actv(id, stdid, name, actvname, attempt)
+        VALUES
+        <foreach collection="std_actv" item="std_actv" separator=",">
+            (#{std_actv.id,jdbcType=INTEGER}, #{std_actv.stdid,jdbcType=INTEGER}, #{std_actv.name, jdbcType=VARCHAR}, #{std_actv.actvname, jdbcType=VARCHAR}, #{std_actv.attempt, jdbcType=INTEGER})
+        </foreach>
+    </insert>
+
+</mapper>
