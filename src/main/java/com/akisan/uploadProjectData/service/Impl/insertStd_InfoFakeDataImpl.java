@@ -30,16 +30,14 @@ public class insertStd_InfoFakeDataImpl implements insertStd_InfoFakeData {
         List<std_exam> fakeExam = new ArrayList<>();
         List<std_actv> fakeActv = new ArrayList<>();
 
-        //生成50条std_info信息
+        //生成50条std_allinfo信息
         for(int i=0;i<50;i++){
             std_allinfo std_info1 = new std_allinfo();
-            String name = getFamilyName();
-            String classname = getClassName();
-            String inSchool = getInSchool();
 
-            std_info1.setName(name);
-            std_info1.setClassname(classname);
-            std_info1.setInschool(inSchool);
+            std_info1.setName(getFamilyName());
+            std_info1.setClassname(getClassName());
+            std_info1.setInschool(getInSchool());
+            std_info1.setAcademy(getAcademy());
 
             fakeName.add(std_info1);
         }
@@ -52,10 +50,12 @@ public class insertStd_InfoFakeDataImpl implements insertStd_InfoFakeData {
             fakeName.get(i).setId(std_allinfoMapper.getStdId(fakeName.get(i).getName()).get(0).getId());
             std_exam1.setStdid(fakeName.get(i).getId());
             std_exam1.setName(fakeName.get(i).getName());
+            std_exam1.setAcademy(fakeName.get(i).getAcademy());
             for(int l=0;l<3;l++){
                 std_exam std_exam2 = new std_exam();
                 std_exam2.setStdid(std_exam1.getStdid());
                 std_exam2.setName(std_exam1.getName());
+                std_exam2.setAcademy(std_exam1.getAcademy());
                 std_exam2.setExamclass(getClassName1());
                 std_exam2.setScore(getScore1());
 

@@ -7,13 +7,14 @@
         <result column="name" property="name"/>
         <result column="examclass" property="examclass"/>
         <result column="score" property="score"/>
+        <result column="academy" property="academy"/>
     </resultMap>
 
     <insert id="insertFakeData">
-        INSERT INTO std_exam(stdid, name, examclass, score)
+        INSERT INTO std_exam(stdid, name, examclass, score, academy)
         VALUES
         <foreach collection="std_exam" item="std_exam" separator=",">
-            (#{std_exam.stdid,jdbcType=INTEGER}, #{std_exam.name, jdbcType=VARCHAR}, #{std_exam.examclass, jdbcType=VARCHAR}, #{std_exam.score, jdbcType=INTEGER})
+            (#{std_exam.stdid,jdbcType=INTEGER}, #{std_exam.name, jdbcType=VARCHAR}, #{std_exam.examclass, jdbcType=VARCHAR}, #{std_exam.score, jdbcType=INTEGER}, #{std_exam.academy, jdbcType=VARCHAR})
         </foreach>
     </insert>
 

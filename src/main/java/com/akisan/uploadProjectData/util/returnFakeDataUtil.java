@@ -11,8 +11,8 @@ public class returnFakeDataUtil {
         return className[a];
     }
 
-    public static String getClassName2(){
-        String[] className = {"高等数学","计算机理论","线性代数","离散数学","计算机网络","计算机组成原理","linux","Java","python","hadoop","spark","数据库与数据库实践","大学物理","概率论","c语言","神经网络","人工智能","网络编程","大学物理","计算机概论","高等数学2","网络编程","flink","大学物理2"};
+    public static String getAcademy(){
+        String[] className = {"化学与环境工程学院","机械工程学院","电气与电子工程学院","数学与计算机学院","土木工程与建筑学院","经济与管理学院"};
         int a = (int) Math.abs(className.length * Math.random());
         return className[a];
     }

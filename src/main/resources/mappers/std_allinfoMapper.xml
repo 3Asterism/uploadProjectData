@@ -6,13 +6,14 @@
         <result column="name" property="name"/>
         <result column="classname" property="classname"/>
         <result column="inschool" property="inschool"/>
+        <result column="academy" property="academy"/>
     </resultMap>
 
     <insert id="insertFakeData">
-        INSERT INTO std_allinfo(name, classname, inschool)
+        INSERT INTO std_allinfo(name, classname, inschool, academy)
         VALUES
         <foreach collection="std_info" item="std_info" separator=",">
-            (#{std_info.name,jdbcType=VARCHAR}, #{std_info.classname, jdbcType=VARCHAR}, #{std_info.inschool, jdbcType=VARCHAR})
+            (#{std_info.name,jdbcType=VARCHAR}, #{std_info.classname, jdbcType=VARCHAR}, #{std_info.inschool, jdbcType=VARCHAR}, #{std_info.academy, jdbcType=VARCHAR})
         </foreach>
     </insert>
 
